@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+    {{assets_js "static/js/jquery.js"}}
+    {{assets_js "static/js/bootstrap.js"}}
+    {{assets_css "/static/css/style.css"}}
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <form method="get">
+                <input class="form-control" name="ip" type="text">
+            </form>
+            {{ if .Result}}
+            <div class="text-center">
+                <h3>{{ .Result.Msg}}:{{ .Result.Ip }}</h3>
+                <h3>{{ .Result.Contry }}</h3>
+                <h3>{{ .Result.City }}</h3>
+            </div>
+
+            {{end}}
+        </div>
+    </div>
+</div>
+</body>
+</html>
